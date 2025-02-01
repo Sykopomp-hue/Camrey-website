@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #bbdefb);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0044cc;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Organizational Chart */
+.org-chart {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Position Boxes */
+.position {
+    background-color: white;
+    padding: 15px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    width: 180px;
+    position: relative;
+}
+
+.position img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.position span {
+    display: block;
+    font-size: 0.9em;
+    color: gray;
+}
+
+.position:hover {
+    background-color: #dbe9ff;
+    transform: scale(1.05);
+}
+
+/* Levels (Each row in the chart) */
+.level {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+/* Connecting Lines */
+.level::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 2px;
+    height: 10px;
+    background-color: #0044cc;
+}
+
+.level:first-child::before {
+    display: none;
+}
+
+.level .position::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 2px;
+    height: 10px;
+    background-color: #0044cc;
+}
+
+.level .position:first-child::after {
+    display: none;
+}
+
+.level:not(:first-child) .position::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 10px;
+    height: 2px;
+    background-color: #0044cc;
+}
+
+.level .position:first-child::before {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-color: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
